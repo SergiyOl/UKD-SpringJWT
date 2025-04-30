@@ -1,6 +1,6 @@
 package com.jwt_test.demo.config;
 
-import org.springframework.boot.CommandLineRunner;
+// import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -28,13 +28,13 @@ public class SecurityConfig {
     private final UserDetailsServiceImpl userDetailsService;
     private final AuthEntryPointJwt authEntryPointJwt;
 
-    @Bean
-    public CommandLineRunner generateHash(PasswordEncoder encoder) {
-        return args -> {
-            System.out.println("user123 -> " + encoder.encode("user123"));
-            System.out.println("admin123 -> " + encoder.encode("admin123"));
-        };
-    }
+    // @Bean
+    // public CommandLineRunner generateHash(PasswordEncoder encoder) {
+    // return args -> {
+    // System.out.println("user123 -> " + encoder.encode("user123"));
+    // System.out.println("admin123 -> " + encoder.encode("admin123"));
+    // };
+    // }
 
     @Bean
     public AuthTokenFilter authenticationJwtTokenFilter(JwtUtils jwtUtils, UserDetailsServiceImpl userDetailsService) {
