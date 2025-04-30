@@ -1,7 +1,8 @@
-package com.jwt_test.demo.service;
+package com.jwt_test.demo.service.auth;
 
 import com.jwt_test.demo.entity.User;
 import com.jwt_test.demo.repository.UserRepository;
+
 // import com.jwt_test.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

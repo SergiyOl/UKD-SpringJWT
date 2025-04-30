@@ -16,7 +16,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.jwt_test.demo.config.jwt.AuthEntryPointJwt;
 import com.jwt_test.demo.config.jwt.AuthTokenFilter;
 import com.jwt_test.demo.config.jwt.JwtUtils;
-import com.jwt_test.demo.service.UserDetailsServiceImpl;
+import com.jwt_test.demo.service.auth.UserDetailsServiceImpl;
 
 import lombok.RequiredArgsConstructor;
 

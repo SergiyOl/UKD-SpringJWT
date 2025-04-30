@@ -1,4 +1,4 @@
-package com.jwt_test.demo.service;
+package com.jwt_test.demo.service.auth;
 
 import com.jwt_test.demo.entity.User;
 // import org.springframework.security.core.userdetails.UserDetailsService;
