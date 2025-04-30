@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jwt_test.demo.exception.StudentNotFoundException;
 import com.jwt_test.demo.entity.dto.RequestStudentDTO;
 import com.jwt_test.demo.entity.dto.ResponceStudentDTO;
+import com.jwt_test.demo.exceptions.customExeptions.StudentNotFoundException;
 import com.jwt_test.demo.model.Student;
 import com.jwt_test.demo.service.students.StudentServiceImpl;
 

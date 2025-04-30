@@ -1,10 +1,14 @@
-package com.jwt_test.demo.exception;
+package com.jwt_test.demo.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
+
+import com.jwt_test.demo.exceptions.customExeptions.StudentNotFoundException;
+
 import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.security.access.AccessDeniedException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +25,12 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Object> handleStudentNotFound(StudentNotFoundException ex, WebRequest request) {
         logger.warn("Student not found: " + ex.getMessage());
         return buildErrorResponse(ex.getMessage(), HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(AccessDeniedException.class)
+    public ResponseEntity<Object> accessDeniedExeption(AccessDeniedException ex, WebRequest request) {
+        logger.warn("Access denied: " + ex.getMessage());
+        return buildErrorResponse("Access denied: You do not have required role.", HttpStatus.FORBIDDEN);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
