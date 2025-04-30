@@ -4,7 +4,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import org.slf4j.Logger;
@@ -50,12 +49,5 @@ public class GlobalExceptionHandler {
         body.put("error", status.getReasonPhrase());
         body.put("message", message);
         return new ResponseEntity<>(body, status);
-    }
-
-    @ExceptionHandler(InvalidLoginException.class)
-    public String handleInvalidLogin(InvalidLoginException ex, RedirectAttributes redirectAttributes) {
-        logger.warn("Login failed: " + ex.getMessage());
-        redirectAttributes.addFlashAttribute("error", ex.getMessage());
-        return "redirect:/login";
     }
 }
